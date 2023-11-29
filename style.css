@@ -82,7 +82,7 @@ body {
 
 @keyframes wave {
     2% {
-        transform: translateX(1);
+        transform: translateX(0);
     }
     25% {
         transform: translateX(-25%);
@@ -94,7 +94,7 @@ body {
         transform: translateX(-25%);
     }
     100% {
-        transform: translateX(1);
+        transform: translateX(0);
     }
 }
 

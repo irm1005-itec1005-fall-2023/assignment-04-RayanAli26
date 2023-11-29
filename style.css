@@ -11,10 +11,10 @@
   /* Core colours */
   /* https://coolors.co/palette/e63946-f1faee-a8dadc-457b9d-1d3557 */
   --colour-amaranth: #e63946;
-  --colour-peppermint: #f1faee;
+  --colour-peppermint: rgb(130, 159, 211);
   --colour-aquaisland: #a8dadc;
-  --colour-wedgewood: #457b9d;
-  --colour-cello: #1d3557;
+  --colour-wedgewood: #216d9c;
+  --colour-cello: #f5f8fd;
 
   /* Header configuration */
   --header-heading-colour: var(--colour-peppermint);
@@ -31,16 +31,164 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   color: var(--body-default-colour);
   background-color: var(--body-background-colour);
+  margin: 0;
+  padding: 0;
+  margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
+    background: linear-gradient(315deg, rgb(66, 12, 110)3%, rgb(246, 114, 114) 38%, rgb(238, 168, 48) 68%, rgb(25, 194, 255) 98%);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-25%);
+    }
+    50% {
+        transform: translateX(-50%);
+    }
+    75% {
+        transform: translateX(-25%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+h1 {
+  padding-bottom: 2rem;
+}
+
+p {
+  text-align: left;
+  padding: 8px;
 }
 
 main {
   min-height: 100vh;
-
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+header {
+  opacity: 0.82;
+  background-color: rgb(65, 65, 65);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+}
+
+input[type="text"] {
+  padding: 8px;
+  margin-right: 8px;
+}
+
+input[type="text"]:hover {
+  animation: glow 3.5s infinite;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 20px #007bff; 
+  }
+  50% {
+    box-shadow: 0 0 15px #ffa600; 
+  }
+  100% {
+    box-shadow: 0 0 20px #a600ff; 
+  }
+}
+
+button {
+  background: rgb(36, 36, 36);
+  color: white;
+}
+
+button:hover {
+  opacity: 0.75; 
+  animation: glow 2s infinite;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 4px #007bff; 
+  }
+  50% {
+    box-shadow: 0 0 7px #ffa600; 
+  }
+  100% {
+    box-shadow: 0 0 4px #a600ff; 
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 1rem;
+}
+
+li {
+  animation: fadeinout 1.5s ease-in-out;
+  padding-bottom: 1rem;
+}
+
+@keyframes fadeinout {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
 
 /****** Screen reader text utility clsas *******/
 .sr-only {
@@ -54,3 +202,4 @@ main {
   white-space: nowrap;
   border-width: 0;
 }
+

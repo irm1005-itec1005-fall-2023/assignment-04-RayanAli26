@@ -41,9 +41,24 @@
   -->
 
   <main>
-    <div id="app"></div>
+      <header>
+        <h1>Todo List App</h1>
+        <p>Add your Task?</p>
+        <form>
+          <input type="text" id="new-task" placeholder="What will you do?" required>
+          <button type="submit">Add</button>
+        </form>
+        <ul id="task-list">
+          <li class="empty-state">No tasks yet. Time to change that!</li>
+        </ul>
+      </header>  
   </main>
 
+  <div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+  </div>
   <!-- Add JavaScript File -->
   <script src="./script.js"></script>
 
